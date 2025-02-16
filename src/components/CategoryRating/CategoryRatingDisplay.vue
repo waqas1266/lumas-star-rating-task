@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <h1>Category Rating</h1>
-    <!--- Loop through the categories and render the RatingStar component --->
-    <RatingStars
-      v-for="(category, index) in categoryRatingStore.categories"
-      :key="index"
-      :category="category"
-      :categoryIndex="index"
-    />
-    <button @click="handleSubmitRating">Submit Rating</button>
-    <button @click="handleResetRating">Reset Rating</button>
-  </div>
+    <div>
+        <h1>Category Rating</h1>
+        <!--- Loop through the categories and render the RatingStar component --->
+        <RatingStars
+            v-for="(category, index) in categoryRatingStore.categories"
+            :key="index"
+            :category="category"
+            :categoryIndex="index"
+        />
+        <button @click="handleSubmitRating">Submit Rating</button>
+        <button @click="handleResetRating">Reset Rating</button>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -23,14 +23,14 @@ const categoryRatingStore = useCategoryRatingStore()
  * Submit the ratings
  */
 const handleSubmitRating = () => {
-  categoryRatingStore.onSubmitRating()
+    categoryRatingStore.onSubmitRating()
 }
 
 /**
  * Reset the Ratings to default
  */
 const handleResetRating = () => {
-  categoryRatingStore.onResetRating()
+    categoryRatingStore.onResetRating()
 }
 </script>
 

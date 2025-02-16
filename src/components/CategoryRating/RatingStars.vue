@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <p>{{ props.category.name }}</p>
-    <!-- Render 5 stars for the rating using the RatingSingleStar component -->
-    <div class="stars">
-      <RatingSingleStar
-        v-for="star in 5"
-        :key="star"
-        :starIndex="star"
-        :categoryIndex="props.categoryIndex"
-        :isFilled="star <= (props.category.hoveredRating ?? 0)"
-      />
+    <div>
+        <p>{{ props.category.name }}</p>
+        <!-- Render 5 stars for the rating using the RatingSingleStar component -->
+        <div class="stars">
+            <RatingSingleStar
+                v-for="star in 5"
+                :key="star"
+                :starIndex="star"
+                :categoryIndex="props.categoryIndex"
+                :isFilled="star <= (props.category.hoveredRating ?? 0)"
+            />
+        </div>
+        <span class="rating">{{ props.category.rating }}/5</span>
     </div>
-    <span class="rating">{{ props.category.rating }}/5</span>
-  </div>
 </template>
 <script setup lang="ts">
 import type { PropType } from 'vue'
@@ -21,23 +21,23 @@ import RatingSingleStar from '@/components/CategoryRating/RatingSingleStar.vue'
 
 // Define props to receive categories Array and category index
 const props = defineProps({
-  category: {
-    type: Object as PropType<ICategory>,
-    required: true,
-  },
-  categoryIndex: {
-    type: Number,
-    required: true,
-  },
+    category: {
+        type: Object as PropType<ICategory>,
+        required: true,
+    },
+    categoryIndex: {
+        type: Number,
+        required: true,
+    },
 })
 </script>
 <style scoped>
 .stars {
-  display: flex;
-  align-content: center;
+    display: flex;
+    align-content: center;
 }
 
 .rating {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 </style>

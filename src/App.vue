@@ -3,9 +3,7 @@ import CategoryRatingDisplay from '@/components/CategoryRating/CategoryRatingDis
 </script>
 
 <template>
- <CategoryRatingDisplay />
+    <CategoryRatingDisplay />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
