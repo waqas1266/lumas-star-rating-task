@@ -10,7 +10,6 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
   /**
    * Fetch Categories and format them
    */
-
   const fetchCategories = async () => {
     try {
       const categoriesArray = await categoryRatings.getCategories()
@@ -33,7 +32,6 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
    * @param rating
    * @return void
    */
-
   const setRating = (categoryIndex: number, rating: number): void => {
     categories.value[categoryIndex].rating = rating
   }
@@ -45,7 +43,6 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
    * @param starIndex
    * @return void
    */
-
   const onMouseHoverStarsRating = (
     categoryIndex: number,
     isFilled: boolean,
@@ -67,6 +64,23 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
       categories.value[categoryIndex].rating > 0 ? categories.value[categoryIndex].rating : 0
   }
 
+  /**
+   * Submit the Ratings
+   */
+  const onSubmitRating = (): void => {
+    console.log(categories.value)
+  }
+
+  /**
+   * Reset Ratings to default
+   */
+  const onResetRating = (): void => {
+    categories.value.forEach((category) => {
+      category.rating = 0
+      category.hoveredRating = 0
+    })
+  }
+
   // Automatically fetch categories when the store is initialized
   fetchCategories()
 
@@ -76,5 +90,7 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
     setRating,
     onMouseHoverStarsRating,
     onMouseLeave,
+    onSubmitRating,
+    onResetRating,
   }
 })

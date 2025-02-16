@@ -8,6 +8,8 @@
       :category="category"
       :categoryIndex="index"
     />
+    <button @click="handleSubmitRating">Submit Rating</button>
+    <button @click="handleResetRating">Reset Rating</button>
   </div>
 </template>
 
@@ -16,6 +18,20 @@ import { useCategoryRatingStore } from '@/stores/CategoryRatingStore'
 import RatingStars from '@/components/CategoryRating/RatingStars.vue'
 
 const categoryRatingStore = useCategoryRatingStore()
+
+/**
+ * Submit the ratings
+ */
+const handleSubmitRating = () => {
+  categoryRatingStore.onSubmitRating()
+}
+
+/**
+ * Reset the Ratings to default
+ */
+const handleResetRating = () => {
+  categoryRatingStore.onResetRating()
+}
 </script>
 
 <style scoped></style>
