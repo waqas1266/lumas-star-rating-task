@@ -8,8 +8,10 @@
         :key="star"
         :starIndex="star"
         :categoryIndex="props.categoryIndex"
+        :isFilled="star <= (props.category.rating ?? 0)"
       />
     </div>
+    <span class="rating">{{ props.category.rating }}/5</span>
   </div>
 </template>
 <script setup lang="ts">
@@ -18,7 +20,6 @@ import type { ICategory } from '@/types/ICategory.ts'
 import RatingSingleStar from '@/components/CategoryRating/RatingSingleStar.vue'
 
 // Define props to receive categories Array and category index
-
 const props = defineProps({
   category: {
     type: Object as PropType<ICategory>,
@@ -30,4 +31,13 @@ const props = defineProps({
   },
 })
 </script>
-<style scoped></style>
+<style scoped>
+.stars {
+  display: flex;
+  align-content: center;
+}
+
+.rating {
+  margin-left: 20px;
+}
+</style>

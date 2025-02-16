@@ -1,6 +1,7 @@
 <template>
   <span
     class="star"
+    :class="{ filled: props.isFilled }"
     @click="handleClick"
     @mouseHover="handleMouseHover"
     @mouseLeave="handleMouseLeave"
@@ -10,6 +11,9 @@
 </template>
 <script setup lang="ts">
 import StarIcon from '@/icons/StarIcon.vue'
+import { useCategoryRatingStore } from '@/stores/CategoryRatingStore.ts'
+
+const categoryRatingStore = useCategoryRatingStore()
 
 // Define props to receive star and category index
 const props = defineProps({
@@ -21,12 +25,18 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  isFilled: {
+    type: Boolean,
+    required: true,
+  },
 })
 
 /**
  * Update rating in the store by clicking on the star
  */
-const handleClick = () => {}
+const handleClick = () => {
+  categoryRatingStore.setRating(props.categoryIndex, props.starIndex)
+}
 
 /**
  * Update rating in the store on mouse hover
@@ -38,6 +48,7 @@ const handleMouseHover = () => {}
  */
 const handleMouseLeave = () => {}
 </script>
+
 <style scoped>
 .star {
   cursor: pointer;
@@ -48,5 +59,9 @@ const handleMouseLeave = () => {}
 
 .star:hover {
   transform: scale(1.2);
+}
+
+.star.filled {
+  color: gold;
 }
 </style>

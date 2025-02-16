@@ -27,11 +27,23 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
     }
   }
 
+  /**
+   * Set Ratings for specific category
+   * @param categoryIndex
+   * @param rating
+   * @return void
+   */
+
+  const setRating = (categoryIndex: number, rating: number): void => {
+    categories.value[categoryIndex].rating = rating
+  }
+
   // Automatically fetch categories when the store is initialized
   fetchCategories()
 
   // Return all functions and categories for component usage
   return {
     categories,
+    setRating
   }
 })
