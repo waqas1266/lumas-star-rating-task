@@ -38,12 +38,28 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
     categories.value[categoryIndex].rating = rating
   }
 
+  /**
+   * Highlights stars on mouse hover
+   * @param categoryIndex
+   * @param isFilled
+   * @param starIndex
+   * @return void
+   */
+
+  const onMouseHoverStarsRating = (categoryIndex: number, isFilled: boolean, starIndex: number): void => {
+    categories.value[categoryIndex].hoveredRating =
+      categories.value[categoryIndex].rating <= starIndex && !isFilled
+        ? starIndex
+        : categories.value[categoryIndex].hoveredRating
+  }
+
   // Automatically fetch categories when the store is initialized
   fetchCategories()
 
   // Return all functions and categories for component usage
   return {
     categories,
-    setRating
+    setRating,
+    onMouseHoverStarsRating
   }
 })

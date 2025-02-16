@@ -8,7 +8,7 @@
         :key="star"
         :starIndex="star"
         :categoryIndex="props.categoryIndex"
-        :isFilled="star <= (props.category.rating ?? 0)"
+        :isFilled="star <= (props.category.hoveredRating ?? 0)"
       />
     </div>
     <span class="rating">{{ props.category.rating }}/5</span>

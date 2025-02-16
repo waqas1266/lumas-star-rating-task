@@ -3,8 +3,8 @@
     class="star"
     :class="{ filled: props.isFilled }"
     @click="handleClick"
-    @mouseHover="handleMouseHover"
-    @mouseLeave="handleMouseLeave"
+    @mouseover="handleMouseHover"
+    @mouseleave="handleMouseLeave"
   >
     <StarIcon />
   </span>
@@ -29,6 +29,7 @@ const props = defineProps({
     type: Boolean,
     required: true,
   },
+
 })
 
 /**
@@ -41,7 +42,10 @@ const handleClick = () => {
 /**
  * Update rating in the store on mouse hover
  */
-const handleMouseHover = () => {}
+const handleMouseHover = () => {
+  console.log(props);
+  categoryRatingStore.onMouseHoverStarsRating(props.categoryIndex,props.isFilled,props.starIndex)
+}
 
 /**
  * Update rating in the store on Mouse leave and reset to 0 if stars are not selected

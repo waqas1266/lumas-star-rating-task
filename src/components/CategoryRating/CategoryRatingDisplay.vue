@@ -6,7 +6,7 @@
       v-for="(category, index) in categoryRatingStore.categories"
       :key="index"
       :category="category"
-      :category-index="index"
+      :categoryIndex="index"
     />
   </div>
 </template>
