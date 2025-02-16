@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import CategoryRatingDisplay from '@/components/CategoryRating/CategoryRatingDisplay.vue'
 </script>
 
 <template>
-  <h1>Stars Rating</h1>
+ <CategoryRatingDisplay />
 </template>
 
 <style scoped>
