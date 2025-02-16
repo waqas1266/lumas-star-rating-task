@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="rating-stars">
         <p>{{ props.category.name }}</p>
         <!-- Render 5 stars for the rating using the RatingSingleStar component -->
-        <div class="stars">
+        <div>
             <RatingSingleStar
                 v-for="star in 5"
                 :key="star"
@@ -32,12 +32,16 @@ const props = defineProps({
 })
 </script>
 <style scoped>
-.stars {
-    display: flex;
-    align-content: center;
+.rating-stars {
+    background: #e4e2dc;
+    padding: 20px;
+    border-radius: 15px;
+    p {
+        margin: 0;
+    }
 }
 
 .rating {
-    margin-left: 20px;
+    font-weight: bold;
 }
 </style>

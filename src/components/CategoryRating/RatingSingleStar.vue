@@ -61,15 +61,17 @@ const handleMouseLeave = () => {
 .star {
     cursor: pointer;
     width: 30px;
-    color: lightgray; /* Default color for unfilled stars */
+    color: gray;
     display: inline-block;
 }
 
 .star:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
 }
 
 .star.filled {
-    color: gold;
+    color: yellow;
 }
 </style>
