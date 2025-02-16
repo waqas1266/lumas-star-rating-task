@@ -29,7 +29,6 @@ const props = defineProps({
     type: Boolean,
     required: true,
   },
-
 })
 
 /**
@@ -43,14 +42,15 @@ const handleClick = () => {
  * Update rating in the store on mouse hover
  */
 const handleMouseHover = () => {
-  console.log(props);
-  categoryRatingStore.onMouseHoverStarsRating(props.categoryIndex,props.isFilled,props.starIndex)
+  categoryRatingStore.onMouseHoverStarsRating(props.categoryIndex, props.isFilled, props.starIndex)
 }
 
 /**
  * Update rating in the store on Mouse leave and reset to 0 if stars are not selected
  */
-const handleMouseLeave = () => {}
+const handleMouseLeave = () => {
+  categoryRatingStore.onMouseLeave(props.categoryIndex)
+}
 </script>
 
 <style scoped>

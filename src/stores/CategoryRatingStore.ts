@@ -46,11 +46,25 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
    * @return void
    */
 
-  const onMouseHoverStarsRating = (categoryIndex: number, isFilled: boolean, starIndex: number): void => {
+  const onMouseHoverStarsRating = (
+    categoryIndex: number,
+    isFilled: boolean,
+    starIndex: number,
+  ): void => {
     categories.value[categoryIndex].hoveredRating =
       categories.value[categoryIndex].rating <= starIndex && !isFilled
         ? starIndex
         : categories.value[categoryIndex].hoveredRating
+  }
+
+  /**
+   * set Hovered Rating to 0 on mouse leave
+   * @param categoryIndex
+   * @return void
+   */
+  const onMouseLeave = (categoryIndex: number): void => {
+    categories.value[categoryIndex].hoveredRating =
+      categories.value[categoryIndex].rating > 0 ? categories.value[categoryIndex].rating : 0
   }
 
   // Automatically fetch categories when the store is initialized
@@ -60,6 +74,7 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
   return {
     categories,
     setRating,
-    onMouseHoverStarsRating
+    onMouseHoverStarsRating,
+    onMouseLeave,
   }
 })
