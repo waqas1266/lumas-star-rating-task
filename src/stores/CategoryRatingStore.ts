@@ -73,7 +73,7 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
             console.log(categories.value)
             return
         }
-      alert('Please select the rating for at least one category')
+        alert('Please select the rating for at least one category')
     }
 
     /**
@@ -97,5 +97,6 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
         onMouseLeave,
         onSubmitRating,
         onResetRating,
+        fetchCategories,
     }
 })
