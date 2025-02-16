@@ -22,14 +22,14 @@ const categoryRatingStore = useCategoryRatingStore()
 /**
  * Submit the ratings
  */
-const handleSubmitRating = () => {
+const handleSubmitRating = async () => {
     categoryRatingStore.onSubmitRating()
 }
 
 /**
  * Reset the Ratings to default
  */
-const handleResetRating = () => {
+const handleResetRating = async  () => {
     categoryRatingStore.onResetRating()
 }
 </script>

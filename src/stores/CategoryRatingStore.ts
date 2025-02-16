@@ -68,7 +68,12 @@ export const useCategoryRatingStore = defineStore('categoryRating', () => {
      * Submit the Ratings
      */
     const onSubmitRating = (): void => {
-        console.log(categories.value)
+        const checkAllRatings = categories.value.some((category) => category.rating > 0)
+        if (checkAllRatings) {
+            console.log(categories.value)
+            return
+        }
+      alert('Please select the rating for at least one category')
     }
 
     /**
