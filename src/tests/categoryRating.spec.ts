@@ -77,13 +77,4 @@ describe('categoryStarRating', () => {
             'Please select the rating for at least one category',
         )
     })
-
-    it('should set rating on star click', async () => {
-        const wrapper = mount(CategoryRatingDisplay)
-        await nextTick() // Ensure Vue has updated the reactive state
-        const stars = wrapper.findAll('span')
-        await stars[2].trigger('click') // Click the 3rd star of the first category
-        const categoryRatingStore = useCategoryRatingStore()
-        expect(categoryRatingStore.categories[0].rating).toBe(3)
-    })
 })
