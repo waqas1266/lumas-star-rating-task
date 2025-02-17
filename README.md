@@ -13,7 +13,22 @@ This project aims to create a star rating component using Vue 3 that allows user
 - A reactive Vue 3 component that tracks user selections and displays the ratings.
 - Easily customizable to add more categories in the future.
 
-## Installation
+## Installation Using Docker
+Follow these steps to get started with the project:
+
+### Build and Bring Up the Containers
+
+Run the following command to build the Docker containers and bring them up:
+
+````
+docker build -t vue-rating-system .; docker run -p 5000:5000 vue-rating-system
+````
+Access the application:
+````
+http://localhost:5000
+````
+
+## Installation without Docker
 
 Follow these steps to get started with the project:
 
