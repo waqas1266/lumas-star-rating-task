@@ -1,10 +1,6 @@
 import { describe, expect, it, beforeEach, vi } from 'vitest'
 import { useCategoryRatingStore } from '@/stores/CategoryRatingStore'
 import { setActivePinia, createPinia } from 'pinia'
-import CategoryRatingDisplay from '@/components/CategoryRating/CategoryRatingDisplay.vue'
-import { mount } from '@vue/test-utils'
-import { nextTick } from 'vue'
-
 
 vi.mock('@/composables/useCategoryRatings', () => {
     return {
