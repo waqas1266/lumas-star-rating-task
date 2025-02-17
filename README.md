@@ -1,40 +1,72 @@
-# lumas-star-rating-task
- 
-This template should help get you started developing with Vue 3 in Vite.
+# Star Rating Component in Vue 3
 
-## Recommended IDE Setup
+## Objective
+This project aims to create a star rating component using Vue 3 that allows users to rate artworks on a scale of 1 to 5 stars in the following categories:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Fits to my Wall**
+- **That's my Style**
+- **Enjoy this Artist**
 
-## Type Support for `.vue` Imports in TS
+## Features
+- A separate component for each category with a 1-5 star rating system.
+- Interactive and responsive UI where users can select the number of stars for each category.
+- A reactive Vue 3 component that tracks user selections and displays the ratings.
+- Easily customizable to add more categories in the future.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Installation
 
-## Customize configuration
+Follow these steps to get started with the project:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Prerequisites
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v14.x or higher)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/) (optional)
 
-## Project Setup
+### Steps
 
-```sh
-npm install
-```
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
 
-### Compile and Hot-Reload for Development
+2. Navigate into the project directory and install the necessary dependencies:
+    ```bash
+    cd <project-directory>
+    npm install
+    ```
 
-```sh
-npm run dev
-```
+3. Run the development server:
+    ```bash
+    npm run dev
+    ```
 
-### Type-Check, Compile and Minify for Production
+4. Open the app in your browser:
+   Visit [http://localhost:5173](http://localhost:5173) to interact with the star rating component.
 
-```sh
-npm run build
-```
+## Build & Static Deployment
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+To prepare your app for production, follow these steps to create a static build:
 
-```sh
+1. Create the production-ready build:
+    ```bash
+    npm run build
+    ```
+
+2. The build files will be generated in the `dist/` directory.
+
+3. You can deploy these files to any static hosting service (e.g., [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), or a traditional web server).
+
+## Testing
+
+### Unit Tests
+For unit testing, run the following command:
+```bash
 npm run test:unit
 ```
 
+### End-to-End (E2E) Testing
+To run end-to-end tests, use:
+```bash
+npm run test:e2e
+```
+Add :dev at the end if testing on dev envirment
